@@ -211,61 +211,398 @@
         #backgroundSuggestions .copy-hex-btn:hover, #backgroundSuggestions .text-hex-btn:hover, #backgroundSuggestions .dl-hex-btn:hover {
             opacity: 1;
         }
+        /* ===== スマホ専用（幅640px未満）最適化 ===== */
+        @media (max-width: 639px) {
+            /* プレビューエリアの余白・角丸・高さ調整 */
+            #preview {
+                border-radius: 1rem !important;
+                padding: 0.5rem !important;
+                min-height: 220px !important;
+                aspect-ratio: 16/10 !important;
+            }
+            #previewHeader {
+                padding: 0.7rem 0.7rem 0.3rem 0.7rem !important;
+            }
+            #previewSubtitle {
+                font-size: 0.95rem !important;
+            }
+            #previewTitle {
+                font-size: 1.15rem !important;
+                margin-top: 0.2rem !important;
+            }
+            #previewSectionTitle {
+                font-size: 1rem !important;
+                margin-bottom: 0.7rem !important;
+            }
+            #previewGantt {
+                font-size: 0.92rem !important;
+                gap: 0.2rem !important;
+            }
+            #previewFooter {
+                padding: 0.7rem !important;
+            }
+            #previewTakeawayTitle {
+                font-size: 1rem !important;
+            }
+            #previewTakeawayText {
+                font-size: 0.95rem !important;
+            }
+            /* プレビュー内のGanttヘッダー・行の余白圧縮 */
+            #previewGantt > div {
+                margin-top: 0.2rem !important;
+            }
+            /* プレビュー注意書きのサイズ圧縮 */
+            .ps-card > .flex > span {
+                font-size: 0.85rem !important;
+                padding: 0.3em 0.8em !important;
+            }
+            /* カラーパレットのチップを1列2列化 */
+            #palette {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 0.8rem !important;
+                overflow: visible !important;
+            }
+            #palette > div {
+                height: auto !important;
+                aspect-ratio: 1/1 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                max-width: 100% !important;
+                max-height: 100vw !important;
+                overflow: visible !important;
+            }
+            #palette > div > div {
+                height: auto !important;
+                aspect-ratio: 1/1 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                max-width: 100% !important;
+                max-height: 100vw !important;
+                overflow: visible !important;
+            }
+            /* パレット親カードのoverflowも明示 */
+            .ps-card {
+                overflow: visible !important;
+            }
+            /* カラー設定パネルのsticky解除（スマホのみ） */
+            .ps-card.sticky {
+                position: static !important;
+                top: auto !important;
+            }
+            /* --- スマホ専用：UI圧縮・最適化 --- */
+            /* カード全体のパディング圧縮 */
+            .ps-card {
+                padding: 1.1rem 0.7rem !important;
+                margin-bottom: 1.1rem !important;
+            }
+            /* セクションタイトル・見出し圧縮 */
+            .ps-section-title {
+                font-size: 1.05rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            /* 入力欄・ボタン圧縮 */
+            .ps-input, .ps-hex {
+                font-size: 0.98rem !important;
+                padding: 0.5rem 0.7rem !important;
+                height: 2.2rem !important;
+            }
+            .ps-btn {
+                font-size: 0.98rem !important;
+                padding: 0.4rem 1rem !important;
+                min-height: 2.2rem !important;
+            }
+            /* カラーパレットの上下余白圧縮 */
+            #palette {
+                margin-top: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            /* パレット下のボタン余白圧縮 */
+            #exportSvgButton {
+                margin-top: 0.7rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            /* アクセントカラーの上下余白圧縮 */
+            #accentColorContainer {
+                margin-top: 0.2rem !important;
+                margin-bottom: 0.2rem !important;
+            }
+            /* プレビューセクションの余白圧縮 */
+            #preview {
+                margin-top: 0.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            /* SVGプレビュー・テキストエリアの高さ圧縮 */
+            #svgLivePreview, #svgCodeTextarea {
+                height: 80px !important;
+            }
+            /* セクション間のgap圧縮 */
+            main > section.flex.flex-col.gap-8.col-span-1.md\:col-span-2 > .ps-card {
+                margin-bottom: 0.7rem !important;
+            }
+            /* 各説明文の文字サイズ圧縮 */
+            .ps-card p, .ps-card label, .ps-label {
+                font-size: 0.95rem !important;
+            }
+            /* カラーパレットのチップ間gap圧縮 */
+            #palette {
+                gap: 0.4rem !important;
+            }
+            /* カラーパレットのチップ自体もやや小さく */
+            #palette > div > div {
+                border-radius: 0.7rem !important;
+            }
+            /* カードの角丸もやや小さく */
+            .ps-card {
+                border-radius: 0.7rem !important;
+            }
+            /* ヘッダー・サブタイトル圧縮 */
+            .ps-header {
+                font-size: 1.5rem !important;
+                padding-left: 0.3rem !important;
+                padding-top: 0.3rem !important;
+            }
+            .ps-sub {
+                font-size: 1rem !important;
+                padding-left: 0.3rem !important;
+            }
+            /* 画面全体の左右パディング圧縮 */
+            body, .w-full.h-full {
+                padding-left: 0.2rem !important;
+                padding-right: 0.2rem !important;
+            }
+            /* --- カラー設定UIを横並び・省スペース化 --- */
+            .ps-card > .space-y-8 { gap: 0.7rem !important; }
+            .ps-card > .space-y-8 > div { margin-bottom: 0 !important; }
+            /* カラー入力欄を横並び1行に */
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row {
+                flex-direction: row !important;
+                gap: 0.5rem !important;
+                align-items: center !important;
+            }
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row > input[type="color"] {
+                width: 2.5rem !important;
+                min-width: 2.5rem !important;
+                height: 2.5rem !important;
+                margin-right: 0.2rem !important;
+            }
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row > input.ps-hex {
+                width: 5.2rem !important;
+                min-width: 5.2rem !important;
+                font-size: 1.05rem !important;
+                padding: 0.4rem 0.5rem !important;
+            }
+            /* ラベルを小さく・余白圧縮 */
+            .ps-label { font-size: 0.93rem !important; margin-bottom: 0.1rem !important; }
+            /* エラー表示も圧縮 */
+            #startColorHexError, #endColorHexError {
+                font-size: 0.85rem !important;
+                margin-top: 0.1rem !important;
+            }
+            /* 色の数UIも横並び・gap圧縮 */
+            #colorCountValue { font-size: 1.05rem !important; }
+            #colorCountInput { width: 2.8rem !important; min-width: 2.8rem !important; font-size: 1.05rem !important; }
+            #colorCountDecrement, #colorCountIncrement {
+                padding: 0.2rem 0.7rem !important;
+                font-size: 1.1rem !important;
+                min-width: 1.8rem !important;
+            }
+            #colorCount {
+                margin-left: 0.3rem !important;
+                margin-top: 0 !important;
+                width: 100% !important;
+            }
+            /* 色の数全体を横並び */
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row.items-stretch.sm\:items-center.gap-2.mt-2 {
+                flex-direction: row !important;
+                gap: 0.5rem !important;
+                align-items: center !important;
+            }
+            /* サービス名（.ps-header）をさらに大きく */
+            .ps-header {
+                font-size: 2.2rem !important;
+                line-height: 1.15 !important;
+                padding-left: 0.1rem !important;
+                padding-top: 0.2rem !important;
+                letter-spacing: -0.01em !important;
+            }
+            /* カラー設定の始点・終点を横並び2カラムに（崩れ修正） */
+            .ps-card > .space-y-8 {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.7rem !important;
+            }
+            .ps-card > .space-y-8 > div {
+                margin-bottom: 0 !important;
+            }
+            .ps-card > .space-y-8 > div:nth-child(1),
+            .ps-card > .space-y-8 > div:nth-child(2) {
+                grid-column: span 1;
+            }
+            .ps-card > .space-y-8 > div:nth-child(3) {
+                grid-column: 1 / span 2;
+                width: 100%;
+            }
+            /* カラー入力欄のgap圧縮 */
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row {
+                gap: 0.4rem !important;
+            }
+            /* 背景色の提案ボタンを2x2グリッドに */
+            #backgroundSuggestions {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 0.5rem !important;
+            }
+            #backgroundSuggestions button {
+                min-width: 0 !important;
+                width: 100% !important;
+                font-size: 0.98rem !important;
+                padding: 0.7em 0.2em !important;
+            }
+            /* カラー設定の始点・終点を2カラム横並び、ラベルと入力欄を縦揃えで中央寄せ */
+            .ps-card > .space-y-8 {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr;
+                gap: 0.7rem !important;
+            }
+            .ps-card > .space-y-8 > div {
+                margin-bottom: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+            }
+            .ps-card > .space-y-8 > div > label.ps-label {
+                text-align: center !important;
+                width: 100%;
+                margin-bottom: 0.2rem !important;
+            }
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row {
+                width: 100%;
+                justify-content: center !important;
+            }
+            .ps-card > .space-y-8 > div > span {
+                text-align: center !important;
+                width: 100%;
+            }
+            .ps-card > .space-y-8 > div:nth-child(3) {
+                grid-column: 1 / span 2;
+                width: 100%;
+                align-items: stretch !important;
+            }
+        }
+        @media (max-width: 639px) {
+            /* カラー設定の始点・終点を上下2分割のカード風に並べる（ズレ防止＆かっこよく） */
+            .ps-card > .space-y-8 {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.7rem !important;
+            }
+            .ps-card > .space-y-8 > div:nth-child(1),
+            .ps-card > .space-y-8 > div:nth-child(2) {
+                background: #f7fafd;
+                border-radius: 0.8rem;
+                box-shadow: 0 1.5px 6px 0 rgba(0,0,0,0.04);
+                padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+                margin-bottom: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .ps-card > .space-y-8 > div > label.ps-label {
+                text-align: center !important;
+                width: 100%;
+                margin-bottom: 0.2rem !important;
+            }
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row {
+                width: 100%;
+                justify-content: center !important;
+                gap: 0.4rem !important;
+            }
+            .ps-card > .space-y-8 > div > span {
+                text-align: center !important;
+                width: 100%;
+            }
+            .ps-card > .space-y-8 > div:nth-child(3) {
+                margin-top: 0.2rem !important;
+            }
+        }
+        @media (max-width: 639px) {
+            /* --- 始点・終点のラベル＋入力欄を左揃えに --- */
+            .ps-card > .space-y-8 > div > label.ps-label {
+                text-align: left !important;
+                margin-left: 0 !important;
+            }
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row {
+                justify-content: flex-start !important;
+                align-items: flex-start !important;
+            }
+            .ps-card > .space-y-8 > div > .flex.flex-col.sm\:flex-row > input.ps-hex {
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+                overflow-x: auto !important;
+                text-align: left !important;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen text-[#222]">
 
-    <div class="w-full h-full px-0 md:px-8 py-4 md:py-12">
-        <header class="mb-10 md:mb-14 w-full">
-            <h1 class="ps-header text-5xl md:text-6xl tracking-tight mb-2 drop-shadow-sm pl-6 pt-4">Palette Studio</h1>
-            <p class="ps-sub text-xl md:text-2xl max-w-2xl pl-6">ノンデザイナーのためのスライド資料特化カラーパレット生成サービス</p>
+    <div class="w-full h-full px-2 sm:px-4 md:px-8 py-2 sm:py-4 md:py-12">
+        <header class="mb-6 sm:mb-8 md:mb-14 w-full">
+            <h1 class="ps-header text-3xl sm:text-4xl md:text-6xl tracking-tight mb-2 drop-shadow-sm pl-2 sm:pl-4 md:pl-6 pt-2 sm:pt-3 md:pt-4">Palette Studio</h1>
+            <p class="ps-sub text-base sm:text-lg md:text-2xl max-w-full sm:max-w-2xl pl-2 sm:pl-4 md:pl-6">ノンデザイナーのためのスライド資料特化カラーパレット生成サービス</p>
         </header>
-        <main class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full">
+        <main class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full px-2 sm:px-4 md:px-0">
             <!-- 設定パネル -->
-            <section class="ps-card shadow-xl flex flex-col h-fit rounded-none sticky top-8">
+            <section class="ps-card shadow-xl flex flex-col h-fit rounded-none sticky top-2 sm:top-8 min-w-0 w-full max-w-full md:max-w-none">
                 <h2 class="ps-section-title text-2xl mb-6 flex items-center gap-2"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#f5f6fa" stroke="#0071e3" stroke-width="2"/><path d="M8 12a4 4 0 108 0 4 4 0 00-8 0z" fill="#0071e3"/></svg> カラー設定</h2>
                 <div class="space-y-8 flex-1">
                     <div>
                         <label for="startColor" class="ps-label">最も濃い色 (始点)</label>
-                        <div class="flex items-center gap-3">
-                            <input type="color" id="startColor" value="#000000" class="h-12 w-16 border-0 rounded-lg cursor-pointer ps-input shadow-sm">
-                            <input type="text" id="startColorHex" value="#000000" maxlength="7" class="ps-hex w-32 text-center text-lg tracking-widest" placeholder="#000000">
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+                            <input type="color" id="startColor" value="#000000" class="h-12 w-full sm:w-16 border-0 rounded-lg cursor-pointer ps-input shadow-sm">
+                            <input type="text" id="startColorHex" value="#000000" maxlength="7" class="ps-hex w-full sm:w-32 text-center text-lg tracking-widest" placeholder="#000000">
                         </div>
                         <span id="startColorHexError" class="text-xs text-red-500 hidden">無効なHex形式です</span>
                     </div>
                     <div>
                         <label for="endColor" class="ps-label">最も薄い色 (終点)</label>
-                        <div class="flex items-center gap-3">
-                            <input type="color" id="endColor" value="#FFFFFF" class="h-12 w-16 border-0 rounded-lg cursor-pointer ps-input shadow-sm">
-                            <input type="text" id="endColorHex" value="#FFFFFF" maxlength="7" class="ps-hex w-32 text-center text-lg tracking-widest" placeholder="#FFFFFF">
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+                            <input type="color" id="endColor" value="#FFFFFF" class="h-12 w-full sm:w-16 border-0 rounded-lg cursor-pointer ps-input shadow-sm">
+                            <input type="text" id="endColorHex" value="#FFFFFF" maxlength="7" class="ps-hex w-full sm:w-32 text-center text-lg tracking-widest" placeholder="#FFFFFF">
                         </div>
                         <span id="endColorHexError" class="text-xs text-red-500 hidden">無効なHex形式です</span>
                     </div>
                     <div>
                         <label for="colorCount" class="ps-label">色の数: <span id="colorCountValue" class="font-bold text-[#0071e3]">6</span></label>
-                        <div class="flex items-center gap-2 mt-2">
-                            <button id="colorCountDecrement" class="ps-btn px-3 py-1 text-lg">-</button>
-                            <input type="number" id="colorCountInput" min="3" max="12" value="6" class="ps-hex w-20 text-center text-lg">
-                            <button id="colorCountIncrement" class="ps-btn px-3 py-1 text-lg">+</button>
-                            <input type="range" id="colorCount" min="3" max="12" value="6" class="w-full h-2 bg-[#e5e7eb] rounded-lg appearance-none cursor-pointer ps-range ml-4">
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mt-2">
+                            <div class="flex flex-row gap-2 w-full sm:w-auto justify-between sm:justify-start">
+                                <button id="colorCountDecrement" class="ps-btn px-3 py-1 text-lg">-</button>
+                                <input type="number" id="colorCountInput" min="3" max="12" value="6" class="ps-hex w-20 text-center text-lg">
+                                <button id="colorCountIncrement" class="ps-btn px-3 py-1 text-lg">+</button>
+                            </div>
+                            <input type="range" id="colorCount" min="3" max="12" value="6" class="w-full h-2 bg-[#e5e7eb] rounded-lg appearance-none cursor-pointer ps-range ml-0 sm:ml-4 mt-2 sm:mt-0">
                         </div>
                     </div>
                 </div>
                 <div class="mt-10">
                     <h2 class="ps-section-title text-xl mb-4 flex items-center gap-2"><svg width="22" height="22" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="#e9ebf0" stroke="#0071e3" stroke-width="2"/></svg> 背景色の提案</h2>
-                    <div id="backgroundSuggestions" class="grid grid-cols-2 gap-3">
+                    <div id="backgroundSuggestions" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <!-- 背景色ボタンがここに動的に追加されます -->
                     </div>
                     <div id="bgHexCopyArea" class="mt-2"></div>
                 </div>
             </section>
             <!-- 結果表示エリア -->
-            <section class="flex flex-col gap-8 col-span-2">
+            <section class="flex flex-col gap-8 col-span-1 md:col-span-2">
                 <!-- 生成されたカラーパレット -->
                 <div class="ps-card shadow-xl mb-8 rounded-none">
                     <h2 class="ps-section-title text-2xl mb-4 flex items-center gap-2"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="#f5f6fa" stroke="#0071e3" stroke-width="2"/></svg> 生成されたカラーパレット</h2>
                     <p class="text-base text-[#888] mb-6">各色の「Aa」は、その背景色に対して推奨されるテキスト色（白/黒）を示します。</p>
-                    <div id="palette" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6">
+                    <div id="palette" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
                         <!-- カラーチップがここに動的に追加されます -->
                     </div>
                     <div class="mt-8 text-center">
@@ -276,7 +613,7 @@
                 <div class="ps-card shadow-xl mb-8 rounded-none">
                     <h2 class="ps-section-title text-2xl mb-4 flex items-center gap-2"><svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#e9ebf0" stroke="#0071e3" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#0071e3" stroke-width="2" stroke-linecap="round"/></svg> アクセントカラーの提案</h2>
                     <p class="text-base text-[#888] mb-6">パレットのメインカラーを引き立てる差し色です。グラフやボタンの強調に効果的です。</p>
-                    <div id="accentColorContainer" class="flex items-center gap-8">
+                    <div id="accentColorContainer" class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
                         <!-- アクセントカラーがここに動的に追加されます -->
                     </div>
                 </div>
@@ -292,19 +629,19 @@
                     </div>
                     <div id="preview" class="w-full aspect-[16/9] rounded-2xl transition-colors duration-300 flex flex-col overflow-hidden border border-[#e5e7eb] bg-gradient-to-br from-[#fafdff] to-[#f5f6fa]">
                         <!-- Header/Title Section -->
-                        <div class="p-8 md:p-10" id="previewHeader">
+                        <div class="p-4 sm:p-8 md:p-10" id="previewHeader">
                             <p id="previewSubtitle" class="text-base font-semibold uppercase tracking-wider"></p>
-                            <h3 id="previewTitle" class="text-3xl md:text-4xl font-bold mt-1"></h3>
+                            <h3 id="previewTitle" class="text-2xl sm:text-3xl md:text-4xl font-bold mt-1"></h3>
                         </div>
                         <!-- Main Content Area: Gantt Chart -->
-                        <div class="flex-grow px-8 md:px-10 py-6 flex flex-col">
-                            <h4 id="previewSectionTitle" class="text-lg font-bold mb-4">実行タイムライン</h4>
-                            <div id="previewGantt" class="flex-grow text-base space-y-2">
+                        <div class="flex-grow px-4 sm:px-8 md:px-10 py-4 sm:py-6 flex flex-col">
+                            <h4 id="previewSectionTitle" class="text-base sm:text-lg font-bold mb-4">実行タイムライン</h4>
+                            <div id="previewGantt" class="flex-grow text-sm sm:text-base space-y-2">
                                 <!-- Gantt chart content will be generated here -->
                             </div>
                         </div>
                         <!-- Footer / Key Takeaway -->
-                        <div class="mt-auto p-6 md:p-8" id="previewFooter">
+                        <div class="mt-auto p-4 sm:p-6 md:p-8" id="previewFooter">
                             <p id="previewTakeawayTitle" class="font-bold text-base">Key Takeaway:</p>
                             <p id="previewTakeawayText" class="text-base">キーメッセージをここに簡潔に記述します。</p>
                         </div>
@@ -314,7 +651,7 @@
                 <div class="ps-card shadow-xl rounded-none">
                     <h2 class="ps-section-title text-2xl mb-4 flex items-center gap-2"><svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="#e9ebf0" stroke="#0071e3" stroke-width="2"/></svg> SVG プレビュー & コード</h2>
                     <p class="text-base text-[#888] mb-6">上のツールで生成されたSVGコードが表示されます。ここに直接SVGコードを貼り付けてプレビューすることも可能です。</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
                         <div>
                             <label for="svgCodeTextarea" class="ps-label mb-2 block">SVG コード</label>
                             <textarea id="svgCodeTextarea" class="w-full h-48 p-3 border border-[#e5e7eb] rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-[#0071e3] font-mono text-base bg-[#fafdff] resize-none" spellcheck="false"></textarea>
@@ -459,48 +796,118 @@
             }
 
             function updatePaletteDisplay(palette) {
+                // スマホ判定
+                const isMobile = window.matchMedia && window.matchMedia('(max-width: 639px)').matches;
                 paletteContainer.innerHTML = '';
-                palette.forEach(color => {
-                    const colorEl = document.createElement('div');
-                    colorEl.className = 'relative';
-                    const swatch = document.createElement('div');
-                    swatch.className = 'w-full aspect-square rounded-lg shadow relative';
-                    swatch.style.backgroundColor = color.hex;
+                if (isMobile) {
+                    // スマホ専用：1色1行のリスト型UI（行全体に色をつける）
+                    palette.forEach(color => {
+                        // 正方形のカラーチップ
+                        const square = document.createElement('div');
+                        square.style.position = 'relative';
+                        square.style.width = '100%';
+                        square.style.aspectRatio = '1/1';
+                        square.style.background = color.hex;
+                        square.style.borderRadius = '1.1rem';
+                        square.style.boxShadow = '0 2px 8px 0 rgba(0,0,0,0.06)';
+                        square.style.marginBottom = '0.7rem';
+                        square.style.display = 'flex';
+                        square.style.alignItems = 'center';
+                        square.style.justifyContent = 'center';
 
-                    const luminance = getLuminance(color.rawRgb);
-                    const textColor = luminance > 128 ? '#000000' : '#FFFFFF';
+                        // HEX（中央表示、Aaの役割も兼ねる）
+                        const textColor = (getLuminance(color.rawRgb) > 128 ? '#222' : '#fff');
+                        const hexEl = document.createElement('span');
+                        hexEl.textContent = color.hex;
+                        hexEl.style.fontFamily = 'monospace';
+                        hexEl.style.fontSize = '1.25rem';
+                        hexEl.style.fontWeight = 'bold';
+                        hexEl.style.letterSpacing = '0.04em';
+                        hexEl.style.color = textColor;
+                        hexEl.style.position = 'absolute';
+                        hexEl.style.top = '50%';
+                        hexEl.style.left = '50%';
+                        hexEl.style.transform = 'translate(-50%, -60%)';
+                        hexEl.style.textShadow = '0 2px 8px rgba(0,0,0,0.10)';
+                        hexEl.style.userSelect = 'text';
 
-                    const textEl = document.createElement('div');
-                    textEl.className = 'swatch-text';
-                    textEl.style.color = textColor;
-                    textEl.textContent = 'Aa';
-                    swatch.appendChild(textEl);
-                    
-                    const info = document.createElement('div');
-                    info.className = 'text-left mt-2';
-                    info.innerHTML = `<p class="font-semibold text-sm">${color.hex}</p>`; // Hexのみ表示
-                    
-                    const copyButton = document.createElement('button');
-                    copyButton.textContent = 'コピー';
-                    copyButton.className = 'mt-1 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-1 px-2 rounded-md transition-colors';
-                    
-                    const feedbackEl = document.createElement('div');
-                    feedbackEl.className = 'copy-feedback';
-                    feedbackEl.textContent = 'コピーしました!';
+                        // コピー（中央下に横書きで配置）
+                        const copyButton = document.createElement('button');
+                        copyButton.textContent = 'コピー';
+                        copyButton.style.fontSize = '1.05rem';
+                        copyButton.style.padding = '0.3rem 1.1rem';
+                        copyButton.style.background = (getLuminance(color.rawRgb) > 128 ? '#fff' : '#222');
+                        copyButton.style.border = 'none';
+                        copyButton.style.borderRadius = '0.7rem';
+                        copyButton.style.color = (getLuminance(color.rawRgb) > 128 ? '#222' : '#fff');
+                        copyButton.style.fontWeight = '700';
+                        copyButton.style.cursor = 'pointer';
+                        copyButton.style.boxShadow = '0 1.5px 4px 0 rgba(0,0,0,0.08)';
+                        copyButton.style.position = 'absolute';
+                        copyButton.style.left = '50%';
+                        copyButton.style.bottom = '10%';
+                        copyButton.style.transform = 'translateX(-50%)';
+                        copyButton.onclick = (e) => {
+                            e.stopPropagation();
+                            const textarea = document.createElement('textarea');
+                            textarea.value = color.hex;
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            try {
+                                document.execCommand('copy');
+                                copyButton.textContent = '✓';
+                                setTimeout(() => { copyButton.textContent = 'コピー'; }, 1200);
+                            } catch (err) {}
+                            document.body.removeChild(textarea);
+                        };
 
-                    copyButton.onclick = (e) => {
-                        e.stopPropagation();
-                        const textarea = document.createElement('textarea');
-                        textarea.value = color.hex;
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        try {
-                            document.execCommand('copy');
-                            feedbackEl.style.opacity = '1';
-                            feedbackEl.style.transform = 'translateX(-50%) translateY(-10px)';
-                            setTimeout(() => {
-                                feedbackEl.style.opacity = '0';
-                                feedbackEl.style.transform = 'translateX(-50%)';
+                        square.appendChild(hexEl); // HEXのみ中央
+                        square.appendChild(copyButton); // コピーを中央下
+                        paletteContainer.appendChild(square);
+                    });
+                } else {
+                    // ...既存のPC用グリッドUI...
+                    palette.forEach(color => {
+                        const colorEl = document.createElement('div');
+                        colorEl.className = 'relative';
+                        const swatch = document.createElement('div');
+                        swatch.className = 'w-full aspect-square rounded-lg shadow relative';
+                        swatch.style.backgroundColor = color.hex;
+
+                        const luminance = getLuminance(color.rawRgb);
+                        const textColor = luminance > 128 ? '#000000' : '#FFFFFF';
+
+                        const textEl = document.createElement('div');
+                        textEl.className = 'swatch-text';
+                        textEl.style.color = textColor;
+                        textEl.textContent = 'Aa';
+                        swatch.appendChild(textEl);
+                        
+                        const info = document.createElement('div');
+                        info.className = 'text-left mt-2';
+                        info.innerHTML = `<p class="font-semibold text-sm">${color.hex}</p>`;
+                        
+                        const copyButton = document.createElement('button');
+                        copyButton.textContent = 'コピー';
+                        copyButton.className = 'mt-1 text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium py-1 px-2 rounded-md transition-colors';
+                        
+                        const feedbackEl = document.createElement('div');
+                        feedbackEl.className = 'copy-feedback';
+                        feedbackEl.textContent = 'コピーしました!';
+
+                        copyButton.onclick = (e) => {
+                            e.stopPropagation();
+                            const textarea = document.createElement('textarea');
+                            textarea.value = color.hex;
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            try {
+                                document.execCommand('copy');
+                                feedbackEl.style.opacity = '1';
+                                feedbackEl.style.transform = 'translateX(-50%) translateY(-10px)';
+                                setTimeout(() => {
+                                    feedbackEl.style.opacity = '0';
+                                    feedbackEl.style.transform = 'translateX(-50%)';
                             }, 1500);
                         } catch (err) { console.error('コピーに失敗しました', err); }
                         document.body.removeChild(textarea);
@@ -512,6 +919,7 @@
                     colorEl.appendChild(feedbackEl);
                     paletteContainer.appendChild(colorEl);
                 });
+                }
             }
             
             function updateAccentColor(palette) {
